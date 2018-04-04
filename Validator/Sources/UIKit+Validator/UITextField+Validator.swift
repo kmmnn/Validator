@@ -30,7 +30,10 @@
 import UIKit
 
 extension UITextField: ValidatableInterfaceElement {
-    
+    public func validate<R>(rule r: R) -> ValidationResult where R : ValidationRule, UITextField.InputType == R.InputType {
+        
+    }
+ 
     public typealias InputType = String
     
     open var inputValue: String? { return text }
